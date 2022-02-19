@@ -12,7 +12,7 @@ import { NavBar } from './App.jsx';
 
 
 
-ReactDOM.render(<NavBar />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById("root"));
 
 
 
