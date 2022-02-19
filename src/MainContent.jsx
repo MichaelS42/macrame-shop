@@ -1,7 +1,14 @@
-import React, { Component} from 'react';
+import React, { Component } from "react";
 
 export default class MainContent extends Component {
-    render () {
-        return <div> Hello from main Content </div>
-    }
+  state = {
+    appTitle: "Customers",
+  };
+  render() {
+    return (
+      <div>
+        <h3 className="border-bottom m-1 p1">{this.state.appTitle}</h3>
+      </div>
+    );
+  }
 }

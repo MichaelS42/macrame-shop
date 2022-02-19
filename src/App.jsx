@@ -5,6 +5,9 @@ import MainContent from './MainContent';
 
 export default class App extends Component {
     render () {
-        return <NavBar />;
+        return <React.Fragment>
+            <NavBar />
+            <MainContent/>
+            </React.Fragment>
     }
 } 
