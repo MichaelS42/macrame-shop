@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import data from './data';
 
 //CONTEXTS
@@ -20,22 +20,32 @@ function App() {
 	};
 
 	return (
+
+		<React.Fragment>
 		<div className="App">
+			
 			<ProductContext.Provider value={{ products, addItem}}>
 				<CartContext.Provider value={{ cart }}>
 					<Navigation cart={cart} />
 
 					{/* Routes */}
+					<Routes>
 					<Route exact path="/">
+						
 						<Products />
+						
 					</Route>
 
 					<Route path="/cart">
 						<ShoppingCart cart={cart} />
 					</Route>
+					</Routes>
+				
 				</CartContext.Provider>
 			</ProductContext.Provider>
+	
 		</div>
+		</React.Fragment>
 	);
 }
 
