@@ -1,18 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
+import { withRouter } from './hooks/withRouter';
 import "jquery";
 import "popper.js";
 import "bootstrap/dist/js/bootstrap";
 import "bootstrap/dist/css/bootstrap.css";
 import './index.css';
 import App from './App';
-import { NavBar } from './App.jsx';
+
+const AppWithRouter = withRouter(App)
 
 
 
 
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<Router><AppWithRouter /></Router>, document.getElementById("root"));
 
 
 

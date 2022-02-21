@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return <button class="btn btn-danger">div that says hello</button>
+  return <button className="btn btn-danger">div that says hello</button>
   
 }
 
