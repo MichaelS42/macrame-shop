@@ -28,11 +28,13 @@ function App() {
 			<h1> this is h1</h1>
 			<ProductContext.Provider value={{products, addItem}}>
 				<CartContext.Provider value ={{ cart}}>
-					<Navigation cart={cart} />
-					<ShoppingCart cart ={cart} />
+					<Routes>
+					<Route path="/navigation" element={<Navigation cart={cart}/>} />
+					<Route path="/cart" element={<ShoppingCart cart ={cart}/>} />
 					
 
-					<Products />
+					<Route path="/products" element={<Products />} />
+					</Routes>
 
 				
 				</CartContext.Provider>
