@@ -9,8 +9,8 @@ import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
 
 //CONTEXTS
-// import { ProductContext } from "./contexts/ProductContext";
-// import { CartContext } from "./contexts/CartContext";
+import { ProductContext } from "./contexts/ProductContext";
+import { CartContext } from "./contexts/CartContext";
 // APP w/ CONTEXT
 
 function App() {
@@ -32,10 +32,11 @@ function App() {
       <ProductContext.Provider value={{ products, addItem }}>
         <CartContext.Provider value={{ cart }}>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/navigation" element={<Navigation cart={cart} />} />
-            <Route path="/cart" element={<ShoppingCart cart={cart} />} />
+            {/* <Route exact path="/" element={<Home />} />
+            <Route path="/navigation" element={<Navigation cart={cart} />} /> */}
             <Route path="/products" element={<Products />} />
+            <Route path="/cart" element={<ShoppingCart cart={cart} />} />
+            <Route path="/checkout" component={CheckoutForm} />
           </Routes>
         </CartContext.Provider>
         
