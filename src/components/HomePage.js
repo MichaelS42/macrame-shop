@@ -1,7 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Route } from "react-router-dom";
 
-const Home = () => {
+const HomePage = () => {
   return (
     <>
       <div> H2 from HOME</div>
@@ -9,10 +9,13 @@ const Home = () => {
         <ul>
           <li>
             <Link to="/navigation">Navigation</Link>
+            </li>
+            <li>
+            <Link to="/cart">Cart</Link>
           </li>
         </ul>
       </nav>
     </>
   );
 };
-export default Home;
+export default HomePage;
