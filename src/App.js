@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Routes, NavLink } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, NavLink} from "react-router-dom";
 import data from "./data";
 
 //COMPONENTS
@@ -7,13 +7,16 @@ import data from "./data";
 import Products from "./components/Products";
 import ShoppingCart from "./components/ShoppingCart";
 import CheckoutForm from "./components/CheckoutForm";
-import Home from "./components/Home";
-import Navigation from "./components/Navigation"
+import HomePage from "./components/HomePage";
+import Header from "./components/Header"
 
 //CONTEXTS
 import { ProductContext } from "./contexts/ProductContext";
 import { CartContext } from "./contexts/CartContext";
-// APP w/ CONTEXT
+
+
+//styles
+
 
 function App() {
   const [products] = useState(data);
@@ -30,17 +33,16 @@ function App() {
 
   return (
     <div className="App">
-      <h1> this is h1</h1>
+      <h1>Macrame Shop</h1>
       <ProductContext.Provider value={{ products, addToCart }}>
-        <CartContext.Provider value={{ cart }}>
+        <CartContext.Provider value={ cart }>
           <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route path="/navigation" element={<Navigation cart={cart} />} />
-            <Route path="/" element={<Products />} />
+            <Route exact path="/" component={HomePage} />
+            
             <Route path="/cart" element={<ShoppingCart cart={cart} />} />
             <Route path="/checkout" component={CheckoutForm} />
           </Routes>
-        </CartContext.Provider>
+          </CartContext.Provider>
       </ProductContext.Provider>
     </div>
   );
